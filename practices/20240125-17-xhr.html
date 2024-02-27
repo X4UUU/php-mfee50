@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!--XMLHttpRequest-->
+    <input type="number" id="a" placeholder="a">
+    +
+    <input type="number" id="b" placeholder="b">
+    <button onclick="sendData()">=</button>
+    <span id="result"></span>
+    <script>
+        const a_in = document.querySelector('#a');
+        const b_in = document.querySelector('#b');
+        const result_el = document.querySelector('#result');
+        function sendData() {
+            const xhr = new XMLHttpRequest();
+            //open()的第三個參數為false時,是"同步"
+            xhr.open("GET",`20240118-07-plus.php?a=${a_in.value}&b=${b_in.value}`,false);
+            xhr.send();
+            result_el.innerHTML = xhr.responseText;
+            //在fetch時只能非同步
+        }
+
+    </script>
+</body>
+
+</html>

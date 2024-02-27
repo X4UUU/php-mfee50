@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!--XMLHttpRequest-->
+    <input type="number" id="a" placeholder="a">
+    +
+    <input type="number" id="b" placeholder="b">
+    <button onclick="sendData()">=</button>
+    <span id="result"></span>
+    <script>
+        const a_in = document.querySelector('#a');
+        const b_in = document.querySelector('#b');
+        const result_el = document.querySelector('#result');
+        function sendData() {
+            //1.建立 XMLHttpRequest 物件
+            const xhr = new XMLHttpRequest();
+            
+            //2.定義事件處理器
+            xhr.onload = (event) => {
+                console.log('A');
+                result_el.innerHTML = xhr.responseText;
+            };
+            
+            //3.發ajax之前的設定
+            xhr.open('GET', `20240118-07-plus.php?a=${a_in.value}&b=${b_in.value}`);
+            console.log('B');
+            
+            //4.發送
+            xhr.send();//非同步
+            console.log('C');
+
+        }
+
+    </script>
+</body>
+
+</html>

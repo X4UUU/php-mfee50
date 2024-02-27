@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="console.log('AAAAA')">AAAAAA</button>
+    <br/>
+    <br/>
+    <button onclick="console.log('aaaaa')">aaaaa</button>
+    <script>
+        const [btn1,btn2] = document.querySelectorAll("button");
+        btn1.onclick = (event) => {
+            console.log("BBBBB");
+        };
+        btn1.onclick = function (event) {
+            console.log("CCCCC");
+        };
+        btn2.addEventListener("click",(event)=>{
+            console.log("bbbbbb");
+        });
+        btn2.addEventListener("click",(event)=>{
+            console.log("cccccc");
+        });
+    </script>
+</body>
+
+</html>

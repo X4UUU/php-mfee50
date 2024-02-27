@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="form1" action="./20240118-plus.php" ><!--event不能省略為e-->
+        <input type="text" name="a" placeholder="a"><br/>
+        <input type="password" name="b" placeholder="b"><br/>
+        <button>送出資料</button>
+        <!--沒有設定type其預設值為submit，只有在表單form裡面才有這種情形-->
+        <!--input type="submit"-->
+    </form>
+    <script>
+        /*document.form1.onsubmit = ((event)=>{
+            //event.preventDefault();//這行會蓋掉上面的onsubmit
+            const account = document.form1.account.value;
+            const password = document.form1.password.value;
+            console.log({account,password});
+            return false;//相當於event.preventDefault()
+        });*/
+        
+    </script>
+</body>
+</html>
+
